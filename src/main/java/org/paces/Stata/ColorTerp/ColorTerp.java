@@ -1029,16 +1029,46 @@ public class ColorTerp {
 	 * @param colors A string array of RGB values to be passed back to Stata
 	 */
 	public void toStata(String[] colors) {
-		
-		// Loop over the elements of the string array
-		for (int i = 0; i < colors.length; i++) {
 
-			// Create a name for the macro
-			String name = "color" + (i + 1);
-			
-			// Set a macro with the name defined above with the value for the 
-			// corresponding string array element
-			Macro.setLocal(name, colors[i]);
+
+		// Loop over the elements of the string array
+		for (int i = 0; i < (colors.length + 2); i++) {
+
+			// For the first iteration return the starting color translated
+			// to the return color space
+			if (i == 0) {
+
+				// Manually set the name
+				String name = "color1";
+
+				// Returns the local macro with the starting color translated into
+				// the return color space
+				Macro.setLocal(name, getColorString(getStart(), getRetSpace()));
+
+			} // End if Block for starting color
+
+			// If ending value
+			else if (i == (colors.length - 1)) {
+
+				// Create the name for the end value
+				String name = "color" + (colors.length - 1);
+
+				// Returns the ending color in the requested return color space
+				Macro.setLocal(name, getColorString(getEnd(), getRetSpace()));
+
+			} // End ELSEIF Block for last value case
+
+			// ELSE Block to handle the interpolated color cases
+			else {
+
+				// Create a name for the macro
+				String name = "color" + (i + 1);
+
+				// Set a macro with the name defined above with the value for the
+				// corresponding string array element
+				Macro.setLocal(name, colors[i]);
+
+			} // End ELSE Block for the interpolated colors
 
 		} // End Loop over string array elements
 		

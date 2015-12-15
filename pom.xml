@@ -45,7 +45,7 @@
 	<!-- Defines how Maven should build the Java binaries -->
 	<build>
 	<defaultGoal>install</defaultGoal>
-	<finalName>org.paces.Stata.ColorTerp</finalName>
+	<finalName>brewterpolate</finalName>
 
 		<plugins>
 
@@ -85,7 +85,7 @@
 			<artifactId>sfi</artifactId>
 			<version>14</version>
 			<type>jar</type>
-			<scope>compile</scope>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
