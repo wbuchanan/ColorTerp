@@ -1,4 +1,4 @@
-package org.paces.Stata.ColorTerp;
+package org.paces.stata;
 
 import com.stata.sfi.Macro;
 import javafx.scene.paint.Color;
@@ -175,7 +175,7 @@ public class ColorTerp {
 		Color x;
 
 		// Check if there is only a single value in the array
-		if (colors.length <= 1 && inspace == "web") {
+		if (colors.length <= 1 && "web".equals(inspace)) {
 
 			// Process the web formatted color
 			x = Color.web(colors[0]);
@@ -196,97 +196,76 @@ public class ColorTerp {
 	/***
 	 * Setter method for the input color space
 	 */
-	public void setInSpace() {
+	public void setInSpace(String icspace) {
 
 		// Sets the input color space variable
-		this.inspace = Macro.getLocalSafe("icspace");
+		this.inspace = icspace;
 
 	} // End of setter for input color space
 
 	/***
 	 * Setter method for the returned color space
 	 */
-	public void setRetSpace() {
+	public void setRetSpace(String rcspace) {
 
 		// Sets the return value color space
-		this.retspace = Macro.getLocalSafe("rcspace");
+		this.retspace = rcspace;
 
 	} // End of setter for return value color space
 
 	/***
 	 * Setter method for inverted colors
 	 */
-	public void setInverse() {
+	public void setInverse(String inverse) {
 
 		// Set inverted colors to boolean version of string
-		this.invertcolors = Boolean.valueOf(Macro.getLocalSafe("inverse"));
+		this.invertcolors = Boolean.valueOf(inverse);
 
 	} // End of setter for inverse colors
 
 	/***
 	 * Setter method for brightness, darkness, saturated, and/or desaturated
 	 * variables
-	 * @param colorspace The output colorspace used for the color interpolation
+	 * @param b String argument from the luminance parameter in the Stata ado
 	 */
-	public void setBrighter(String colorspace) {
+	public void setBrighter(String b) {
 
-		// Gets the luminance value from Stata
-		String b = Macro.getLocalSafe("luminance");
+		// For brighter set brighter true and all else false
+		if ("brighter".equals(b)) {
+			this.brighter = true;
+			this.darker = false;
+			this.saturated = false;
+			this.desaturated = false;
 
-		// For all but the HSB based color spaces
-		if (colorspace.equals("rgb") || colorspace.equals("rgba") ||
-			colorspace.equals("srgb") || colorspace.equals("srgba") ||
-			colorspace.equals("web")) {
+		// For darker set darker true and all else false
+		} else if ("darker".equals(b)) {
+			this.brighter = false;
+			this.darker = true;
+			this.saturated = false;
+			this.desaturated = false;
 
-			// For brighter set brighter true and all else false
-			if (b.equals("brighter")) {
-				this.brighter = true;
-				this.darker = false;
-				this.saturated = false;
-				this.desaturated = false;
+		// Saturated sets saturated to true
+		} else if ("saturated".equals(b)) {
+			this.brighter = false;
+			this.darker = false;
+			this.saturated = true;
+			this.desaturated = false;
 
-			// For darker set darker true and all else false
-			} else if (b.equals("darker")) {
-				this.brighter = false;
-				this.darker = true;
-				this.saturated = false;
-				this.desaturated = false;
+		// Desaturated sets desaturated to true
+		} else if ("desaturated".equals(b)) {
+			this.brighter = false;
+			this.darker = false;
+			this.saturated = false;
+			this.desaturated = true;
 
-			// For all other cases set all to false
-			} else {
-				this.brighter = false;
-				this.darker = false;
-				this.saturated = false;
-				this.desaturated = false;
-			}
-
-		// For HSB based color spaces
+		// For every other case set everything to false
 		} else {
+			this.brighter = false;
+			this.darker = false;
+			this.saturated = false;
+			this.desaturated = false;
 
-			// For brighter set saturated to true
-			if (b.equals("brighter")) {
-				this.brighter = false;
-				this.darker = false;
-				this.saturated = true;
-				this.desaturated = false;
-
-			// For darker set desaturated to true
-			} else if (b.equals("darker")) {
-				this.brighter = false;
-				this.darker = false;
-				this.saturated = false;
-				this.desaturated = true;
-
-			// For every other case set everything to false
-			} else {
-				this.brighter = false;
-				this.darker = false;
-				this.saturated = false;
-				this.desaturated = false;
-
-			} // End IFELSE Block for HSB parameters
-
-		} // End ELSE Block for HSB color space
+		} // End IFELSE Block luminance argument
 
 	} // End Method declaration
 
@@ -564,7 +543,7 @@ public class ColorTerp {
 
 		// For arrays that are too short
 		if (points == 1) {
-
+			tmp[0] = 0.0;
 		} else {
 
 			// Get the fraction between start and end for a # of points
@@ -591,42 +570,47 @@ public class ColorTerp {
 
 	} // End of method declaration
 
-	/***
-	 * Method to create a string array of RGB values given start and end colors
-	 * and the distance between them.
-	 * @param s Starting color object
-	 * @param e Ending color object
-	 * @param distances Array of distances between start and end
+	/**
+	 * Method used to convert an RGB Integer value to a Hexadecimal string
+	 * @param val A double valued RGB component value
+	 * @return A two byte hexadecimal string.  If the value is in [0, 15] the
+	 * method will append the leading zero in the first position of the
+	 * string (e.g., 11 in decimal becomes "0b" instead of "b").
 	 */
-	public void setTColors(Color s, Color e, double[] distances) {
+	public String rgbToHex(Double val) {
 
-		// Sets up storage object
-		String[] colors = new String[distances.length];
+		// Converts the value first to Integer and then to a Hexadecimal String
+		String v = Integer.toHexString(rgbInt(val));
 
-		// Loop over the distances
-		for(int i = 0; i < distances.length; i++) {
+		// If in [0, 15] returns value with appended "0" in the first position
+		if (v.length() == 1) return "0" + v;
 
-			// Interpolate the color between the start and end for a given distance
-			Color tmpColor = s.interpolate(e, distances[i]);
+		// Else it returns the two byte string
+		else return v;
 
-			// Get String value of the red color rounded to nearest integer
-			String r = String.valueOf(Math.round(tmpColor.getRed() * 255));
+	} // End of method declaration
 
-			// Get String value of the green color rounded to nearest integer
-			String g = String.valueOf(Math.round(tmpColor.getGreen() * 255));
+	/**
+	 * Method to transform double valued RGB component value to an Integer
+	 * value in [0, 255]
+	 * @param val The double value to convert to an RGB integer
+	 * @return An integer value in [0, 255] based on the double value passed
+	 * to the method.
+	 */
+	public Integer rgbInt(Double val) {
 
-			// Get String value of the blue color rounded to nearest integer
-			String b = String.valueOf(Math.round(tmpColor.getBlue() * 255));
+		// If the rounded value is less than 255
+		// Else impose a cieling value of 255
+		if (Math.round(val * 255) < 255) {
 
-			// Add the space delimited string as an array element
-			colors[i] = r + " " + g + " " + b;
+			// Return the rounded value
+			return (int) Math.round(val * 255);
 
-		} // End Loop over the distance array
+		// If the value is 255 or greater
+		} else return 255;
 
-		// Set the string array object that holds the RGB values
-		this.tcolors = colors;
-
-	} // End of method definition
+		// End ELSE Block
+	} // End Method declaration
 
 	/***
 	 * Method to translate color object into a color string
@@ -637,103 +621,117 @@ public class ColorTerp {
 	 */
 	public String getColorString(Color thecolor, String cspace) {
 
-		// Initialize the return string
-		String color;
-
 		// For RGB-based color spaces
-		if (cspace.equals("rgb") || cspace.equals("rgba")) {
+		switch (cspace) {
+			case "hex":
+			case "hexa": {
 
-			// Get String value of the red color rounded to nearest integer
-			String r = String.valueOf(Math.round(thecolor.getRed() * 255));
+				String r = rgbToHex(thecolor.getRed());
 
-			// Get String value of the green color rounded to nearest integer
-			String g = String.valueOf(Math.round(thecolor.getGreen() * 255));
+				String g = rgbToHex(thecolor.getGreen());
 
-			// Get String value of the blue color rounded to nearest integer
-			String b = String.valueOf(Math.round(thecolor.getBlue() * 255));
+				String b = rgbToHex(thecolor.getBlue());
 
-			// For RGB with alpha transparency
-			if (cspace.equals("rgba")) {
+				if ("hexa".equals(cspace)) {
+					String a = rgbToHex(thecolor.getOpacity());
+					return r + g + b + a;
+				} else {
+					return r + g + b;
+				}
 
-				// Retrieve the opacity parameter
-				String a = String.valueOf(Math.round(thecolor.getOpacity() * 255));
+			}
+			case "srgb":
+			case "srgba": {
 
-				// Add the space delimited string as an array element
-				color = r + " " + g + " " + b + " " + a;
+				// Get String value of the red color rounded to nearest integer
+				String r = String.valueOf(thecolor.getRed());
 
-			// For RGB without alpha transparency
-			} else {
+				// Get String value of the green color rounded to nearest integer
+				String g = String.valueOf(thecolor.getGreen());
 
-				// Add the space delimited string as an array element
-				color = r + " " + g + " " + b;
+				// Get String value of the blue color rounded to nearest integer
+				String b = String.valueOf(thecolor.getBlue());
 
-			} // End ELSE Block for RGB
+				// If colorspace includes alpha layer transparency
+				if (cspace.equals("srgba")) {
 
-		// For sRGB and sRGBa colorspaces
-		} else if (cspace.equals("srgb") || cspace.equals("srgba")) {
+					// Retrieve the opacity parameter
+					String a = String.valueOf(thecolor.getOpacity());
 
-			// Get String value of the red color rounded to nearest integer
-			String r = String.valueOf(thecolor.getRed());
+					// Add the space delimited string as an array element
+					return r + " " + g + " " + b + " " + a;
 
-			// Get String value of the green color rounded to nearest integer
-			String g = String.valueOf(thecolor.getGreen());
+					// For sRGB without alpha transparency
+				} else {
 
-			// Get String value of the blue color rounded to nearest integer
-			String b = String.valueOf(thecolor.getBlue());
+					// Add the space delimited string as an array element
+					return r + " " + g + " " + b;
 
-			// If colorspace includes alpha layer transparency
-			if (cspace.equals("rgba")) {
+				} // End ELSE Block for sRGB
 
-				// Retrieve the opacity parameter
-				String a = String.valueOf(thecolor.getOpacity());
+			}
+			case "hsb":
+			case "hsba": {
 
-				// Add the space delimited string as an array element
-				color = r + " " + g + " " + b + " " + a;
+				// Get String value of the hue
+				String h = String.valueOf(thecolor.getHue());
 
-			// For sRGB without alpha transparency
-			} else {
+				// Get String value of the saturation
+				String s = String.valueOf(thecolor.getSaturation());
 
-				// Add the space delimited string as an array element
-				color = r + " " + g + " " + b;
+				// Get String value of the brightness
+				String b = String.valueOf(thecolor.getBrightness());
 
-			} // End ELSE Block for sRGB
+				// If colorspace includes alpha layer transparency
+				if (cspace.equals("hsba")) {
 
-		// For HSB-based return color spaces
-		} else {
+					// Retrieve the opacity parameter
+					String a = String.valueOf(thecolor.getOpacity());
 
-			// Get String value of the hue
-			String h = String.valueOf(thecolor.getHue());
+					// Add the space delimited string as an array element
+					return h + " " + s + " " + b + " " + a;
 
-			// Get String value of the saturation
-			String s = String.valueOf(thecolor.getSaturation());
+					// For HSB without alpha transparency
+				} else {
 
-			// Get String value of the brightness
-			String b = String.valueOf(thecolor.getBrightness());
+					// Add the space delimited string as an array element
+					return h + " " + s + " " + b;
 
-			// Add the space delimited string as an array element
-			color = h + " " + s + " " + b;
+				} // End ELSE Block for HSB w/o alpha transparency
 
-			// If colorspace includes alpha layer transparency
-		 	if (cspace.equals("hsba")) {
+			}
 
-				// Retrieve the opacity parameter
-				String a = String.valueOf(thecolor.getOpacity());
+			// For base 10 RGB integers
+			default: {
 
-				// Add the space delimited string as an array element
-				color = h + " " + s + " " + b + " " + a;
+				// Get String value of the red color rounded to nearest integer
+				String r = String.valueOf(rgbInt(thecolor.getRed()));
 
-			// For HSB without alpha transparency
-			} else {
+				// Get String value of the green color rounded to nearest integer
+				String g = String.valueOf(rgbInt(thecolor.getGreen()));
 
-				// Add the space delimited string as an array element
-				color = h + " " + s + " " + b;
+				// Get String value of the blue color rounded to nearest integer
+				String b = String.valueOf(rgbInt(thecolor.getBlue()));
 
-			} // End ELSE Block for HSB w/o alpha transparency
+				// For RGB with alpha transparency
+				if (cspace.equals("rgba")) {
 
-		} // End ELSE Block for HSB-based color spaces
+					// Retrieve the opacity parameter
+					String a = String.valueOf(thecolor.getOpacity());
 
-		// Return the color string
-		return color;
+					// Add the space delimited string as an array element
+					return r + " " + g + " " + b + " " + a;
+
+					// For RGB without alpha transparency
+				} else {
+
+					// Add the space delimited string as an array element
+					return r + " " + g + " " + b;
+
+				} // End ELSE Block for RGB
+
+			}
+		}
 
 	} // End of Method declaration
 
@@ -765,51 +763,48 @@ public class ColorTerp {
 		// Loop over the distances
 		for(int i = 0; i < distances.length; i++) {
 
-			// Interpolate the color between the start and end for a given distance
-			Color tmpColor = s.interpolate(e, distances[i]);
+			Color tmpColor;
 
 			// Adjust brightness of the colors
-			if (brighter == true) {
+			if (brighter && !darker && !saturated && !desaturated) {
 
 				// Make color arbitrarily darker
-				tmpColor = tmpColor.brighter();
+				tmpColor = s.interpolate(e, distances[i]).brighter();
 
-			} // End IF Block for brighter color
-
-			// Check for darker boolean
-			if (darker == true) {
+			} else if (!brighter && darker && !saturated && !desaturated) {
 
 				// Make color arbitrarily darker
-				tmpColor = tmpColor.darker();
+				tmpColor = s.interpolate(e, distances[i]).darker();
 
-			} // End IF Block for darker color
-
-			// Check for saturated boolean
-			if (saturated == true) {
+			} else if (!brighter && !darker && saturated && !desaturated) {
 
 				// Make color arbitrarily saturated
-				tmpColor = tmpColor.saturate();
+				tmpColor = s.interpolate(e, distances[i]).saturate();
 
-			} // End IF Block for saturated color
-
-			// Check for desaturated boolean
-			if (desaturated == true) {
+			} else if (!brighter && !darker && !saturated && desaturated) {
 
 				// Make color arbitrarily desaturated
-				tmpColor = tmpColor.desaturate();
+				tmpColor = s.interpolate(e, distances[i]).desaturate();
 
-			} // End IF Block for desaturated color
+			} else {
+
+				// Color without brightness/saturation modified
+				tmpColor = s.interpolate(e, distances[i]);
+
+			}
 
 			// Check for inverted color boolean
-			if (invert == true) {
+			if (invert) {
 
 				// Get the inverse of the current color
-				tmpColor = tmpColor.invert();
+				colors[i] = getColorString(tmpColor.invert(), cspace);
 
-			} // End IF Block for inverse color
+			} else {
 
-			// Store the color string in the ith array element
-			colors[i] = getColorString(tmpColor, cspace);
+				// Store the color string in the ith array element
+				colors[i] = getColorString(tmpColor, cspace);
+
+			}
 
 		} // End Loop over the distance array
 
@@ -838,23 +833,27 @@ public class ColorTerp {
 	public ColorTerp(String[] args) {
 
 		// Set the input color space
-		setInSpace();
+		setInSpace(args[0]);
 
 		// Set the return color space
-		setRetSpace();
+		setRetSpace(args[1]);
 
 		// Starting Color
-		setStart(Macro.getLocalSafe("scolor"), getInSpace());
+		setStart(args[2], getInSpace());
 		
 		// Ending Color
-		setEnd(Macro.getLocalSafe("ecolor"), getInSpace());
+		setEnd(args[3], getInSpace());
 
 		// Number of colors to interpret between start and end
-		setPoints(Macro.getLocalSafe("icolors"));
+		setPoints(args[4]);
 		
 		// Set an array of doubles containing the distances between start and 
 		// end colors
 		setDistances(getPoints());
+
+		setBrighter(args[5]);
+
+		setInverse(args[6]);
 		
 		// Get interpolated colors
 		setTColors(getStart(), getEnd(), getDists(), getBrighter(),
@@ -883,6 +882,32 @@ public class ColorTerp {
 		return 0;
 
 	} // End Constructor method
+
+	/**
+	 * Command line interface method
+	 * @param args A string array containing :
+	 *             <ol>
+	 *             		<li>Input Color Space String</li>
+	 *             		<li>Output Color Space String</li>
+	 *             		<li>Starting Color String</li>
+	 *             		<li>Ending Color String</li>
+	 *             		<li>Number of points to interpolate</li>
+	 *             		<li>Luminance argument (one of brighter, darker,
+	 *             		saturated, desaturated, or "") </li>
+	 *             		<li>Invert color (boolean string)</li>
+	 *             </ol>
+	 */
+	public static void main(String[] args) {
+		ColorTerp theColors = new ColorTerp(args);
+		String[] interpedColors = theColors.getTColors();
+		System.out.println(theColors.getColorString(theColors.getStart(),
+				theColors.getRetSpace()));
+		for (String interpedColor : interpedColors) {
+			System.out.println(interpedColor);
+		}
+		System.out.println(theColors.getColorString(theColors.getEnd(),
+				theColors.getRetSpace()));
+	}
 
 	/***
 	 * Getter method to access the points member variable
