@@ -1,13 +1,48 @@
 package org.paces.stata;
-
 import com.stata.sfi.Macro;
 import javafx.scene.paint.Color;
 
 /***
- * Class and methods used for color interpolation in Stata.
  * @author Billy Buchanan
- * @version 0.0.0
- * @date 11dec2015
+ * @version 0.0.1-SNAPSHOT
+ *
+ * Class and methods used for color interpolation in Stata.
+ * To make testing a bit easier, the class includes a main method that
+ * provides a command line interface and prints the results to the console.
+ * The arguments for the main method are described in further detail at
+ * {@link org.paces.stata.ColorTerp#main(String[])}.
+ * However, the primary method to interact with the class and methods should
+ * occur through the brewterpolate.ado Stata command, which acts
+ * as a wrapper around this class by accessing it through the Stata Java API.
+ *
+ * You can find additional information out about the Java plugin described
+ * here at the
+ * <a href="https://github.com/wbuchanan/ColorTerp">project repository</a>,
+ * or by visiting the
+ * <a href="https://wbuchanan.github.io/brewscheme/">brewscheme project page</a> or
+ * <a href="https://github.com/wbuchanan/brewscheme">brewscheme repository.</a>
+ *
+ * <h2>Examples</h2>
+ * // Interpolate 4 colors in RGB colorspace <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(4) <br><br>
+ *
+ * // Interpolate 9 colors in the same color space and return the inverse of the colors <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(9) inv <br><br>
+ *
+ * // Interpolate 3 colors in RGB and return the colors as grayscale <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(3) g <br><br>
+ *
+ * // 5 Saturated colors as Web formatted RGB Hexadecimal strings <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(5) rcs(web) cm(saturated) <br><br>
+ *
+ * // 5 Less saturated colors as Hexadecimal values with alpha parameter <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(5) rcs(hexa) cm(desaturated) <br><br>
+ *
+ * // The inverse of 37 Colors that are arbitrarily brighter in HSB colorspace <br>
+ * brewterpolate, sc("197 115 47") ec("5, 37, 249") c(37) inv cm(brighter) rcs(hsb) <br><br>
+ *
+ *
+ * @see <a href="http://www.stata.com/java/api">Stata Java API.</a>
  */
 public class ColorTerp {
 
@@ -73,6 +108,25 @@ public class ColorTerp {
 	 */
 	private String[] tcolors;
 
+	/**
+	 * Member used to define whether or not to return the values of the
+	 * interpolated colors in a grayscale space.
+	 */
+	private boolean grayscale;
+
+
+	/**
+	 * Method used to set the value of the grayscale member
+	 * @param graysc A boolean string literal indicating if the returned
+	 *                  colors are to be transformed/projected into a
+	 *                  grayscale color space within the user requested color
+	 *                  space (e.g., grayscale colors within HSB/Hex/RGB
+	 *                  color spaces).
+	 */
+	public void setGrayScale(String graysc) {
+		this.grayscale = Boolean.valueOf(graysc);
+	}
+
 	/***
 	 * Method used to construct a color object given an array of integer
 	 * values and a user specified color space
@@ -82,33 +136,27 @@ public class ColorTerp {
 	 */
 	public Color setColor(int[] colors, String inspace) {
 
-		// Initialize a color object
-		Color x;
-
 		// If user specified RGB color space
 		if (colors.length == 3 && inspace.equals("rgb")) {
 
 			// Populate object with Color defined by the rgb elements of the
 			// int array
-			x = Color.rgb(colors[0], colors[1], colors[2]);
+			return Color.rgb(colors[0], colors[1], colors[2]);
 
 		// If there are four int[] elements and colorspace is rgba
 		} else if (colors.length == 4 & inspace.equals("rgba")) {
 
 			// Set rgb from first three elements of array and alpha parameter
 			// from the fourth element of the array
-			x = Color.rgb(colors[0], colors[1], colors[2], colors[3]);
+			return Color.rgb(colors[0], colors[1], colors[2], colors[3]);
 
 		// Should not be reached
 		} else {
 
 			// Default value to prevent compiler from crying
-			x = Color.STEELBLUE;
+			return Color.STEELBLUE;
 
 		} // End IF/ELSE Block for color handling
-
-		// Return the color object
-		return x;
 
 	} // End of Method declaration
 
@@ -121,43 +169,37 @@ public class ColorTerp {
 	 */
 	public Color setColor(double[] colors, String inspace) {
 
-		// Initialize a color object
-		Color x;
-
 		// If user specified sRGB color space and the double[] has 3 elements
 		if (colors.length == 3 && inspace.equals("srgb")) {
 
 			// Use the 3 array elements to define the rgb properties in sRGB
-			x = Color.color(colors[0], colors[1], colors[2]);
+			return Color.color(colors[0], colors[1], colors[2]);
 
 		// If user specified sRGBa color space and the double[] has 4 elements
 		} else if (colors.length == 4 & inspace.equals("srgba")) {
 
 			// First 3 elements are rgb, 4th is alpha
-			x = Color.color(colors[0], colors[1], colors[2], colors[3]);
+			return Color.color(colors[0], colors[1], colors[2], colors[3]);
 
 		// If user specified sRGB color space and the double[] has 3 elements
 		} else if (colors.length == 3 && inspace.equals("hsb")) {
 
 			// Use the 3 array elements to define the hsb properties in HSB
-			x = Color.hsb(colors[0], colors[1], colors[2]);
+			return Color.hsb(colors[0], colors[1], colors[2]);
 
 		// If user specified sRGB color space and the double[] has 3 elements
 		} else if (colors.length == 4 && inspace.equals("hsba")) {
 
 			// First 3 elements are hsb, 4th is alpha
-			x = Color.hsb(colors[0], colors[1], colors[2], colors[3]);
+			return Color.hsb(colors[0], colors[1], colors[2], colors[3]);
 
 		// Should not be reached
 		} else {
 
 			// Default value to prevent compiler from crying
-			x = Color.STEELBLUE;
+			return Color.STEELBLUE;
 
 		} // End IF/ELSE Block for color handling
-
-		// Return the color object
-		return x;
 
 	} // End of Method declaration
 
@@ -171,30 +213,40 @@ public class ColorTerp {
 	 */
 	public Color setColor(String[] colors, String inspace) {
 
-		// Initialize a color object
-		Color x;
+		// If hex with alpha in single hex string
+		if (colors.length == 1 &&
+				("weba".equals(inspace) || "hexa".equals(inspace))) {
 
-		// Check if there is only a single value in the array
-		if (colors.length <= 1 && "web".equals(inspace)) {
+			// First six bytes are the RGB values
+			String hex = colors[0].substring(0, 5);
 
-			// Process the web formatted color
-			x = Color.web(colors[0]);
-
-		// Otherwise
-		} else {
+			// Last two bytes should be the alpha scaled to be in [0, 255]
+			Double alpha = Integer.decode(colors[0].substring(6, 7)) / 255.0;
 
 			// Second argument would be for alpha transparency
-			x = Color.web(colors[0], Double.valueOf(colors[1]));
+			return Color.web(hex, alpha);
+
+		// If the string array contains multiple elements
+		} else if (colors.length > 1) {
+
+			// Other option is to pass alpha as decimal value with space
+			// delimiter between it and the hex string
+			return Color.web(colors[0], Double.valueOf(colors[1]));
+
+		// In all other cases default to single parameter method invocation
+		} else {
+
+			// Treat the single string as a Hexadecimal RGB value
+			return Color.web(colors[0]);
 
 		} // End ELSE Block
-
-		// Return the color object
-		return x;
 
 	} // End of Method declaration
 
 	/***
 	 * Setter method for the input color space
+	 * @param icspace The input color space used for the scolor and ecolor
+	 *                   parameters in brewterpolate.ado
 	 */
 	public void setInSpace(String icspace) {
 
@@ -205,6 +257,8 @@ public class ColorTerp {
 
 	/***
 	 * Setter method for the returned color space
+	 * @param rcspace A string value identifying the colorspace in which the
+	 *                   results are to be returned
 	 */
 	public void setRetSpace(String rcspace) {
 
@@ -215,6 +269,8 @@ public class ColorTerp {
 
 	/***
 	 * Setter method for inverted colors
+	 * @param inverse A boolean string literal indicating if the inverse of
+	 *                   the interpolated colors are to be returned.
 	 */
 	public void setInverse(String inverse) {
 
@@ -226,46 +282,55 @@ public class ColorTerp {
 	/***
 	 * Setter method for brightness, darkness, saturated, and/or desaturated
 	 * variables
-	 * @param b String argument from the luminance parameter in the Stata ado
+	 * @param b String argument from the color modification parameter in the
+	 *             Stata ado
 	 */
 	public void setBrighter(String b) {
 
-		// For brighter set brighter true and all else false
-		if ("brighter".equals(b)) {
-			this.brighter = true;
-			this.darker = false;
-			this.saturated = false;
-			this.desaturated = false;
+		// Switch statement for allowable values for color mod parameter from
+		// the Stata brewterpolate ado wrapper.
+		switch(b) {
 
-		// For darker set darker true and all else false
-		} else if ("darker".equals(b)) {
-			this.brighter = false;
-			this.darker = true;
-			this.saturated = false;
-			this.desaturated = false;
+			// For brighter set brighter true and all else false
+			case "brighter":
+				this.brighter = true;
+				this.darker = false;
+				this.saturated = false;
+				this.desaturated = false;
+				break;
+			// For darker set darker true and all else false
+			case "darker":
+				this.brighter = false;
+				this.darker = true;
+				this.saturated = false;
+				this.desaturated = false;
+				break;
 
-		// Saturated sets saturated to true
-		} else if ("saturated".equals(b)) {
-			this.brighter = false;
-			this.darker = false;
-			this.saturated = true;
-			this.desaturated = false;
+			// Saturated sets saturated to true
+			case "saturated":
+				this.brighter = false;
+				this.darker = false;
+				this.saturated = true;
+				this.desaturated = false;
+				break;
 
-		// Desaturated sets desaturated to true
-		} else if ("desaturated".equals(b)) {
-			this.brighter = false;
-			this.darker = false;
-			this.saturated = false;
-			this.desaturated = true;
+			// Desaturated sets desaturated to true
+			case "desaturated":
+				this.brighter = false;
+				this.darker = false;
+				this.saturated = false;
+				this.desaturated = true;
+				break;
 
-		// For every other case set everything to false
-		} else {
-			this.brighter = false;
-			this.darker = false;
-			this.saturated = false;
-			this.desaturated = false;
+			// For every other case set everything to false
+			default:
+				this.brighter = false;
+				this.darker = false;
+				this.saturated = false;
+				this.desaturated = false;
+				break;
 
-		} // End IFELSE Block luminance argument
+		} // End of Switch statement
 
 	} // End Method declaration
 
@@ -543,7 +608,11 @@ public class ColorTerp {
 
 		// For arrays that are too short
 		if (points == 1) {
+
+			// Set the value of the first element to 0
 			tmp[0] = 0.0;
+
+		// For all other cases
 		} else {
 
 			// Get the fraction between start and end for a # of points
@@ -580,13 +649,10 @@ public class ColorTerp {
 	public String rgbToHex(Double val) {
 
 		// Converts the value first to Integer and then to a Hexadecimal String
-		String v = Integer.toHexString(rgbInt(val));
-
 		// If in [0, 15] returns value with appended "0" in the first position
-		if (v.length() == 1) return "0" + v;
-
-		// Else it returns the two byte string
-		else return v;
+		return Integer.toHexString(rgbInt(val)).length() == 1 ?
+				"0" + Integer.toHexString(rgbInt(val)) :
+				Integer.toHexString(rgbInt(val));
 
 	} // End of method declaration
 
@@ -599,17 +665,9 @@ public class ColorTerp {
 	 */
 	public Integer rgbInt(Double val) {
 
-		// If the rounded value is less than 255
-		// Else impose a cieling value of 255
-		if (Math.round(val * 255) < 255) {
+		// If the rounded value is less than 255 else impose a cieling value of 255
+		return Math.round(val * 255) < 255 ? (int) Math.round(val * 255) : 255;
 
-			// Return the rounded value
-			return (int) Math.round(val * 255);
-
-		// If the value is 255 or greater
-		} else return 255;
-
-		// End ELSE Block
 	} // End Method declaration
 
 	/***
@@ -621,25 +679,52 @@ public class ColorTerp {
 	 */
 	public String getColorString(Color thecolor, String cspace) {
 
-		// For RGB-based color spaces
+		// Returns string based on color space
 		switch (cspace) {
+
+			// Hexadecimal based formats
+			case "web":
+			case "weba": {
+
+				// Convert the red channel value to a hexadecimal string
+				String r = "#" + rgbToHex(thecolor.getRed());
+
+				// Convert the green channel value to a hexadecimal string
+				String g = rgbToHex(thecolor.getGreen());
+
+				// Convert the blue channel value to a hexadecimal string
+				String b = rgbToHex(thecolor.getBlue());
+
+				// If web is output color space
+				if ("web".equals(cspace)) return r + g + b;
+
+				// If web with alpha transparency parameter
+				else return r + g + b + " " + String.valueOf(thecolor.getOpacity());
+
+			} // End CASE for Web-based Colors
+
+			// Case for hexadecimal strings non-web format
 			case "hex":
 			case "hexa": {
 
+				// Convert the red channel value to a hexadecimal string
 				String r = rgbToHex(thecolor.getRed());
 
+				// Convert the green channel value to a hexadecimal string
 				String g = rgbToHex(thecolor.getGreen());
 
+				// Convert the blue channel value to a hexadecimal string
 				String b = rgbToHex(thecolor.getBlue());
 
-				if ("hexa".equals(cspace)) {
-					String a = rgbToHex(thecolor.getOpacity());
-					return r + g + b + a;
-				} else {
-					return r + g + b;
-				}
+				// For hexadecimal with alpha parameter
+				if ("hexa".equals(cspace)) return r + g + b + " " + String.valueOf(thecolor.getOpacity());
 
-			}
+				// For hexadecimal without alpha parameter
+				else return r + g + b;
+
+			} // End Hexadecimal-based return spaces
+
+			// Decimal RGB formats
 			case "srgb":
 			case "srgba": {
 
@@ -655,11 +740,8 @@ public class ColorTerp {
 				// If colorspace includes alpha layer transparency
 				if (cspace.equals("srgba")) {
 
-					// Retrieve the opacity parameter
-					String a = String.valueOf(thecolor.getOpacity());
-
 					// Add the space delimited string as an array element
-					return r + " " + g + " " + b + " " + a;
+					return r + " " + g + " " + b + " " + String.valueOf(thecolor.getOpacity());
 
 					// For sRGB without alpha transparency
 				} else {
@@ -669,7 +751,9 @@ public class ColorTerp {
 
 				} // End ELSE Block for sRGB
 
-			}
+			} // End CASE for decimal RGB values
+
+			// Case for Hue Saturation Brightness colorspace
 			case "hsb":
 			case "hsba": {
 
@@ -685,11 +769,8 @@ public class ColorTerp {
 				// If colorspace includes alpha layer transparency
 				if (cspace.equals("hsba")) {
 
-					// Retrieve the opacity parameter
-					String a = String.valueOf(thecolor.getOpacity());
-
 					// Add the space delimited string as an array element
-					return h + " " + s + " " + b + " " + a;
+					return h + " " + s + " " + b + " " + String.valueOf(thecolor.getOpacity());
 
 					// For HSB without alpha transparency
 				} else {
@@ -699,9 +780,9 @@ public class ColorTerp {
 
 				} // End ELSE Block for HSB w/o alpha transparency
 
-			}
+			} // End CASE for HSB colorspace
 
-			// For base 10 RGB integers
+			// For integer valued RGB
 			default: {
 
 				// Get String value of the red color rounded to nearest integer
@@ -716,11 +797,8 @@ public class ColorTerp {
 				// For RGB with alpha transparency
 				if (cspace.equals("rgba")) {
 
-					// Retrieve the opacity parameter
-					String a = String.valueOf(thecolor.getOpacity());
-
 					// Add the space delimited string as an array element
-					return r + " " + g + " " + b + " " + a;
+					return r + " " + g + " " + b + " " + String.valueOf(thecolor.getOpacity());
 
 					// For RGB without alpha transparency
 				} else {
@@ -730,8 +808,9 @@ public class ColorTerp {
 
 				} // End ELSE Block for RGB
 
-			}
-		}
+			} // End CASE for integer RGB values
+
+		} // End Switch statement
 
 	} // End of Method declaration
 
@@ -752,10 +831,13 @@ public class ColorTerp {
 	 * @param invert A boolean used to return the inverse of the interpolated
 	 *                  colors
 	 * @param cspace The return colorspace to use for the interpolated colors
+	 * @param grayscale A boolean used to translate the color into a
+	 *                     grayscale space
 	 */
 	public void setTColors(Color s, Color e, double[] distances, boolean
 			brighter, boolean darker, boolean saturated,
-			boolean desaturated, boolean invert, String cspace) {
+			boolean desaturated, boolean invert, String cspace,
+			boolean grayscale) {
 
 		// Sets up storage object
 		String[] colors = new String[distances.length];
@@ -765,46 +847,46 @@ public class ColorTerp {
 
 			Color tmpColor;
 
-			// Adjust brightness of the colors
+			// Arbitrarily brighter colors
 			if (brighter && !darker && !saturated && !desaturated) {
 
 				// Make color arbitrarily darker
 				tmpColor = s.interpolate(e, distances[i]).brighter();
 
+			// Arbitrarily darker colors
 			} else if (!brighter && darker && !saturated && !desaturated) {
 
 				// Make color arbitrarily darker
 				tmpColor = s.interpolate(e, distances[i]).darker();
 
+			// Arbitrarily more saturated colors
 			} else if (!brighter && !darker && saturated && !desaturated) {
 
 				// Make color arbitrarily saturated
 				tmpColor = s.interpolate(e, distances[i]).saturate();
 
+			// Arbitrarily less saturated colors
 			} else if (!brighter && !darker && !saturated && desaturated) {
 
 				// Make color arbitrarily desaturated
 				tmpColor = s.interpolate(e, distances[i]).desaturate();
 
+			// Unmodified colors
 			} else {
 
 				// Color without brightness/saturation modified
 				tmpColor = s.interpolate(e, distances[i]);
 
-			}
+			} // End ELSE Block for unmodified colors
 
 			// Check for inverted color boolean
-			if (invert) {
+			if (invert) tmpColor = tmpColor.invert();
 
-				// Get the inverse of the current color
-				colors[i] = getColorString(tmpColor.invert(), cspace);
+			// Get the inverse of the current color
+			if (grayscale) colors[i] = getColorString(tmpColor.invert(), cspace);
 
-			} else {
-
-				// Store the color string in the ith array element
-				colors[i] = getColorString(tmpColor, cspace);
-
-			}
+			// Store the color string in the ith array element
+			else colors[i] = getColorString(tmpColor, cspace);
 
 		} // End Loop over the distance array
 
@@ -821,7 +903,7 @@ public class ColorTerp {
 	public void setPoints(String ptmacro) {
 
 		// Sets value of points to the integer translation of the passed string
-		this.points = Integer.valueOf(ptmacro);
+		this.points = Integer.valueOf(ptmacro) + 1;
 
 	} // End of Method declaration
 
@@ -851,14 +933,20 @@ public class ColorTerp {
 		// end colors
 		setDistances(getPoints());
 
+		// Passes argument to set one of the options from the color
+		// modification parameter in the brewterpolate ado wrapper
 		setBrighter(args[5]);
 
+		// Passes argument to set the inverted colors parameter
 		setInverse(args[6]);
+
+		// Passes argument to set the grayscale parameter
+		setGrayScale(args[7]);
 		
 		// Get interpolated colors
 		setTColors(getStart(), getEnd(), getDists(), getBrighter(),
 				getDarker(), getInvertColors(), getSaturated(), getDesaturated(),
-				getRetSpace());
+				getRetSpace(), getGrayScale());
 		
 	} // End Constructor method
 
@@ -892,21 +980,41 @@ public class ColorTerp {
 	 *             		<li>Starting Color String</li>
 	 *             		<li>Ending Color String</li>
 	 *             		<li>Number of points to interpolate</li>
-	 *             		<li>Luminance argument (one of brighter, darker,
+	 *             		<li>Color mod argument (one of brighter, darker,
 	 *             		saturated, desaturated, or "") </li>
 	 *             		<li>Invert color (boolean string)</li>
+	 *             		<li>Return colors as grayscale</li>
 	 *             </ol>
 	 */
 	public static void main(String[] args) {
+
+		// Initialize new ColorTerp object
 		ColorTerp theColors = new ColorTerp(args);
+
+		// Get the interpolated colors
 		String[] interpedColors = theColors.getTColors();
+
+		// Print the starting color to the console
 		System.out.println(theColors.getColorString(theColors.getStart(),
 				theColors.getRetSpace()));
+
+		// Loop over other colors
 		for (String interpedColor : interpedColors) {
+
+			// Print the color to the console
 			System.out.println(interpedColor);
-		}
-		System.out.println(theColors.getColorString(theColors.getEnd(),
-				theColors.getRetSpace()));
+
+		} // End Loop over other colors
+
+	} // End main method declaration
+
+	/**
+	 * Method to return the boolean value to return the colors as gray scale
+	 * @return A boolean indicating if gray scale colors were requested by
+	 * the user
+	 */
+	public boolean getGrayScale() {
+		return this.grayscale;
 	}
 
 	/***
@@ -1055,48 +1163,21 @@ public class ColorTerp {
 	 */
 	public void toStata(String[] colors) {
 
+		// Returns the starting color in the first position
+		Macro.setLocal("color1", getColorString(getStart(), getRetSpace()));
 
 		// Loop over the elements of the string array
-		for (int i = 0; i < (colors.length + 2); i++) {
+		for (int i = 0; i < colors.length; i++) {
 
-			// For the first iteration return the starting color translated
-			// to the return color space
-			if (i == 0) {
+			// Create a name for the macro
+			String name = "color" + (i + 2);
 
-				// Manually set the name
-				String name = "color1";
-
-				// Returns the local macro with the starting color translated into
-				// the return color space
-				Macro.setLocal(name, getColorString(getStart(), getRetSpace()));
-
-			} // End if Block for starting color
-
-			// If ending value
-			else if (i == (colors.length - 1)) {
-
-				// Create the name for the end value
-				String name = "color" + (colors.length - 1);
-
-				// Returns the ending color in the requested return color space
-				Macro.setLocal(name, getColorString(getEnd(), getRetSpace()));
-
-			} // End ELSEIF Block for last value case
-
-			// ELSE Block to handle the interpolated color cases
-			else {
-
-				// Create a name for the macro
-				String name = "color" + (i + 1);
-
-				// Set a macro with the name defined above with the value for the
-				// corresponding string array element
-				Macro.setLocal(name, colors[i]);
-
-			} // End ELSE Block for the interpolated colors
+			// Set a macro with the name defined above with the value for the
+			// corresponding string array element
+			Macro.setLocal(name, colors[i]);
 
 		} // End Loop over string array elements
-		
+
 	} // End of toStata method declaration
 
 } // End of Class declaration
