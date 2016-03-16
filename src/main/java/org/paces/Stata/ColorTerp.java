@@ -845,7 +845,7 @@ public class ColorTerp {
 		// Loop over the distances
 		for(int i = 0; i < distances.length; i++) {
 
-			Color tmpColor;
+			Color tmpColor, invcol, greycol;
 
 			// Arbitrarily brighter colors
 			if (brighter && !darker && !saturated && !desaturated) {
@@ -880,13 +880,19 @@ public class ColorTerp {
 			} // End ELSE Block for unmodified colors
 
 			// Check for inverted color boolean
-			if (invert) tmpColor = tmpColor.invert();
+			if (invert) invcol = tmpColor.invert();
+
+			// If not inverted color, clone original color
+			else invcol = tmpColor;
 
 			// Get the inverse of the current color
-			if (grayscale) colors[i] = getColorString(tmpColor.invert(), cspace);
+			if (grayscale) greycol = invcol.grayscale();
+
+			// If not grey scale clone the color
+			else greycol = invcol;
 
 			// Store the color string in the ith array element
-			else colors[i] = getColorString(tmpColor, cspace);
+			colors[i] = getColorString(greycol, cspace);
 
 		} // End Loop over the distance array
 
@@ -944,9 +950,9 @@ public class ColorTerp {
 		setGrayScale(args[7]);
 		
 		// Get interpolated colors
-		setTColors(getStart(), getEnd(), getDists(), getBrighter(),
-				getDarker(), getInvertColors(), getSaturated(), getDesaturated(),
-				getRetSpace(), getGrayScale());
+		setTColors(getStart(), getEnd(), getDists(), getBrighter(), getDarker(),
+			getSaturated(), getDesaturated(), getInvertColors(), getRetSpace(),
+			getGrayScale());
 		
 	} // End Constructor method
 

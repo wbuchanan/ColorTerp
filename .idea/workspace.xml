@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f706fb71-0901-41be-87e8-14ed879733c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/brewterpolate.jar" afterPath="$PROJECT_DIR$/target/brewterpolate.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/paces/stata/ColorTerp.class" afterPath="$PROJECT_DIR$/target/classes/org/paces/stata/ColorTerp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="ColorTerp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,25 +40,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.888">
+            <state vertical-scroll-proportion="-0.625">
               <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorTerp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ColorTerp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/stata/ColorTerp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
+            <state vertical-scroll-proportion="1.1061094">
+              <caret line="884" column="58" selection-start-line="884" selection-start-column="58" selection-end-line="884" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#29096#29097#0" expanded="true" />
-                <element signature="e#29124#29125#0" expanded="true" />
+                <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+                <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+                <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,8 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -571,6 +649,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -624,7 +707,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="53" width="1712" height="1101" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -634,7 +717,6 @@
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CodotaView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -643,7 +725,6 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -651,24 +732,26 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903865" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903865" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -683,7 +766,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -694,7 +779,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -702,11 +787,92 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/stata/ColorTerp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#29096#29097#0" expanded="true" />
-            <element signature="e#29124#29125#0" expanded="true" />
+            <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -725,8 +891,89 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#29096#29097#0" expanded="true" />
-            <element signature="e#29124#29125#0" expanded="true" />
+            <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,8 +992,190 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#29096#29097#0" expanded="true" />
-            <element signature="e#29124#29125#0" expanded="true" />
+            <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/stata/ColorTerp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,23 +1227,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/stata/ColorTerp.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#29096#29097#0" expanded="true" />
-            <element signature="e#29124#29125#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/paces/stata/ColorTerp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.888">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="1.1061094">
+          <caret line="884" column="58" selection-start-line="884" selection-start-column="58" selection-end-line="884" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#brighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#darker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#saturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#desaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#invertcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#retspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#inspace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#start#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#end#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#points#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#dists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#tcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;field#grayscale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#1;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setColor#2;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setInverse#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColor#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseColorAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGB#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#parseRGBAlpha#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setDistances#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbToHex#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#rgbInt#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getColorString#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#setPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#ColorTerp#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#interpcolors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#main#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getGrayScale#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getPoints#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDists#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getTColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getStart#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getEnd#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getBrighter#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getSaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDesaturated#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getDarker#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInvertColors#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getRetSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#getInSpace#0;class#ColorTerp#0" expanded="false" />
+            <element signature="docComment;method#toStata#0;class#ColorTerp#0" expanded="false" />
+            <element signature="method#toStata#0;class#ColorTerp#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
